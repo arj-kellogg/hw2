@@ -244,20 +244,35 @@ role.person_id = people.id
 role.character_name = "Selina Kyle"
 role.save
 
+#link movies back to christopher nolan
+people = Person.new
+people.name = "Christopher Nolan"
+people.save
 
-# Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
+movie = Movie.where({title: "Batman Begins"})[0]
+movie.person_id=people.id
+movie.save
+# movie = Movie.where({title: "The Dark Knight"})[0]
+# movie.person_id=people.id
+# movie.save
+# movie = Movie.where({title: "The Dark Knight Rises"})[0]
+# movie.person_id=people.id
+# movie.save
 
-# Query the movies data and loop through the results to display the movies output
-# TODO!
 
-# Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+# # Prints a header for the movies output
+# puts "Movies"
+# puts "======"
+# puts ""
 
-# Query the cast data and loop through the results to display the cast output for each movie
-# TODO!
+# # Query the movies data and loop through the results to display the movies output
+# # TODO!
+
+# # Prints a header for the cast output
+# puts ""
+# puts "Top Cast"
+# puts "========"
+# puts ""
+
+# # Query the cast data and loop through the results to display the cast output for each movie
+# # TODO!
