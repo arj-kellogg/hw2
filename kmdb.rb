@@ -249,30 +249,53 @@ people = Person.new
 people.name = "Christopher Nolan"
 people.save
 
-# movie = Movie.where({title: "Batman Begins"})[0]
-# movie.person_id = people.id
-# movie.save
-# movie = Movie.where({title: "The Dark Knight"})[0]
-# movie.person_id=people.id
-# movie.save
-# movie = Movie.where({title: "The Dark Knight Rises"})[0]
-# movie.person_id=people.id
-# movie.save
+movie = Movie.where({title: "Batman Begins"})[0]
+movie.person = people.name
+movie.save
+movie = Movie.where({title: "The Dark Knight"})[0]
+movie.person=people.name
+movie.save
+movie = Movie.where({title: "The Dark Knight Rises"})[0]
+movie.person=people.name
+movie.save
 
 
-# # Prints a header for the movies output
-# puts "Movies"
-# puts "======"
-# puts ""
+# Prints a header for the movies output
+puts "Movies"
+puts "======"
+puts ""
 
-# # Query the movies data and loop through the results to display the movies output
-# # TODO!
+# Query the movies data and loop through the results to display the movies output
+movie = Movie.all
+for movies in movie
+    puts "#{movies.title} #{movies.year_released} #{movies.rated} #{movies.person}"
+end
 
-# # Prints a header for the cast output
-# puts ""
-# puts "Top Cast"
-# puts "========"
-# puts ""
 
-# # Query the cast data and loop through the results to display the cast output for each movie
-# # TODO!
+
+
+
+# Prints a header for the cast output
+puts ""
+puts "Top Cast"
+puts "========"
+puts ""
+
+# Query the cast data and loop through the results to display the cast output for each movie
+
+role=Role.all
+for roles in role
+    movies = roles.movie
+    output= "#{movies.title} #{roles.person.name} "
+end
+
+
+# for salesperson in salespeople
+#     puts "#{salesperson.first_name} #{salesperson.last_name}"
+    
+#     activities = salesperson.activities
+#     for activity in activities
+#       contact = activity.contact
+#       puts "#{activity.note} - #{contact.first_name} #{contact.last_name}"
+#     end
+#   end
