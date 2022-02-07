@@ -100,120 +100,150 @@ movie.save
 
 
 #Christian Bale added to People and Roles
-people = People.new
+people = Person.new
 people.name = "Christian Bale"
 people.save
-movie = Movie.where({title="Batman Begins"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
 role.character_name = "Bruce Wayne"
 role.save
-movie = Movie.where({title="The Dark Knight"})[0]
+movie = Movie.where({title: "The Dark Knight"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
 role.character_name = "Bruce Wayne"
 role.save
-movie = Movie.where({title="The Dark Knight Rises"})[0]
+movie = Movie.where({title: "The Dark Knight Rises"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
 role.character_name = "Bruce Wayne"
 role.save
 
 #Michael Caine added to People and Roles
-people = People.new
+people = Person.new
 people.name = "Michael Caine"
 people.save
-movie = Movie.where({title="Batman Begins"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
 role.character_name = "Alfred"
 role.save
-movie = Movie.where({title="The Dark Knight"})[0]
+movie = Movie.where({title: "The Dark Knight"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
 role.character_name = "Alfred"
 role.save
 
 #Liam Neeson added to People and Roles
-people = People.new
+people = Person.new
 people.name = "Liam Neeson"
 people.save
-movie = Movie.where({title="Batman Begins"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
 role.character_name = "Ra's Al Ghul"
 role.save
 
-#Liam Neeson added to People and Roles
-people = People.new
+#Katie Holmes added to People and Roles
+people = Person.new
 people.name = "Katie Holmes"
 people.save
-movie = Movie.where({title="Batman Begins"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
 role.character_name = "Rachel Dawes"
 role.save
 
-people = People.new
+#Gary Oldman added to People and Roles
+people = Person.new
 people.name = "Gary Oldman"
 people.save
+movie = Movie.where({title: "Batman Begins"})[0]
 role = Role.new
 role.movie_id = movie.id
-role.people_id = people.id
+role.person_id = people.id
+role.character_name = "Commissioner Gordon"
+role.save
+movie = Movie.where({title: "The Dark Knight Rises"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.person_id = people.id
 role.character_name = "Commissioner Gordon"
 role.save
 
-
-
-
-
-
-
-people = People.new
+#Heath Ledger added to People and Roles
+people = Person.new
 people.name = "Heath Ledger"
 people.save
+movie = Movie.where({title: "The Dark Knight"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.person_id = people.id
+role.character_name = "Joker"
+role.save
 
-people = People.new
+#Aaron Eckhart added to People and Roles
+people = Person.new
 people.name = "Aaron Eckhart"
 people.save
+movie = Movie.where({title: "The Dark Knight"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.person_id = people.id
+role.character_name = "Harvey Dent"
+role.save
 
-people = People.new
+#Maggie Gyllenhaal added to People and Roles
+people = Person.new
 people.name = "Maggie Gyllenhaal"
 people.save
+movie = Movie.where({title: "The Dark Knight"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.person_id = people.id
+role.character_name = "Rachel Dawes"
+role.save
 
-
-
-
-people = People.new
-people.name = "Christopher Nolan"
+#Tom Hardy added to People and Roles
+people = Person.new
+people.name = "Tom Hardy"
 people.save
+movie = Movie.where({title: "The Dark Knight Rises"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.person_id = people.id
+role.character_name = "Bane"
+role.save
 
-CREATE TABLE movies (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  title TEXT,
-  year_released INTEGER,
-  rated TEXT,
-  person_id INTEGER
-);
+#Joseph Gordon-Levitt added to People and Roles
+people = Person.new
+people.name = "Joseph Gordon-Levitt"
+people.save
+movie = Movie.where({title: "The Dark Knight Rises"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.person_id = people.id
+role.character_name = "John Blake"
+role.save
 
-CREATE TABLE people (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT
-);
+#Anne Hathaway added to People and Roles
+people = Person.new
+people.name = "Anne Hathaway"
+people.save
+movie = Movie.where({title: "The Dark Knight Rises"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.person_id = people.id
+role.character_name = "Selina Kyle"
+role.save
 
-CREATE TABLE roles (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  movie_id INTEGER,
-  person_id INTEGER,
-  character_name TEXT
-);
 
 # Prints a header for the movies output
 puts "Movies"
