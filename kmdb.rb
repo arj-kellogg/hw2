@@ -268,10 +268,8 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 movie = Movie.all
 for movies in movie
-    puts "#{movies.title} #{movies.year_released} #{movies.rated} #{movies.person}"
+    puts "#{movies.title}  #{movies.year_released}  #{movies.rated}  #{movies.person}"
 end
-
-
 
 
 
@@ -286,16 +284,6 @@ puts ""
 role=Role.all
 for roles in role
     movies = roles.movie
-    output= "#{movies.title} #{roles.person.name} "
+    puts "#{movies.title}  #{roles.person.name}  #{roles.character_name}"
 end
 
-
-# for salesperson in salespeople
-#     puts "#{salesperson.first_name} #{salesperson.last_name}"
-    
-#     activities = salesperson.activities
-#     for activity in activities
-#       contact = activity.contact
-#       puts "#{activity.note} - #{contact.first_name} #{contact.last_name}"
-#     end
-#   end
