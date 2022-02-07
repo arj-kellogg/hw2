@@ -249,9 +249,9 @@ people = Person.new
 people.name = "Christopher Nolan"
 people.save
 
-movie = Movie.where({title: "Batman Begins"})[0]
-movie.person_id=people.id
-movie.save
+# movie = Movie.where({title: "Batman Begins"})[0]
+# movie.person_id = people.id
+# movie.save
 # movie = Movie.where({title: "The Dark Knight"})[0]
 # movie.person_id=people.id
 # movie.save
