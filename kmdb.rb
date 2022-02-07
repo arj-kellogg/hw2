@@ -68,14 +68,152 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model
 # TODO!
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
-# TODO!
+
+
+
+movie = Movie.new
+movie.title = "Batman Begins"
+movie.year_released = "2005"
+movie.rated = "PG-13"
+movie.save
+
+movie = Movie.new
+movie.title = "The Dark Knight"
+movie.year_released = "2008"
+movie.rated = "PG-13"
+movie.save
+
+movie = Movie.new
+movie.title = "The Dark Knight Rises"
+movie.year_released = "2012"
+movie.rated = "PG-13"
+movie.save
+
+
+#Christian Bale added to People and Roles
+people = People.new
+people.name = "Christian Bale"
+people.save
+movie = Movie.where({title="Batman Begins"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Bruce Wayne"
+role.save
+movie = Movie.where({title="The Dark Knight"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Bruce Wayne"
+role.save
+movie = Movie.where({title="The Dark Knight Rises"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Bruce Wayne"
+role.save
+
+#Michael Caine added to People and Roles
+people = People.new
+people.name = "Michael Caine"
+people.save
+movie = Movie.where({title="Batman Begins"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Alfred"
+role.save
+movie = Movie.where({title="The Dark Knight"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Alfred"
+role.save
+
+#Liam Neeson added to People and Roles
+people = People.new
+people.name = "Liam Neeson"
+people.save
+movie = Movie.where({title="Batman Begins"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Ra's Al Ghul"
+role.save
+
+#Liam Neeson added to People and Roles
+people = People.new
+people.name = "Katie Holmes"
+people.save
+movie = Movie.where({title="Batman Begins"})[0]
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Rachel Dawes"
+role.save
+
+people = People.new
+people.name = "Gary Oldman"
+people.save
+role = Role.new
+role.movie_id = movie.id
+role.people_id = people.id
+role.character_name = "Commissioner Gordon"
+role.save
+
+
+
+
+
+
+
+people = People.new
+people.name = "Heath Ledger"
+people.save
+
+people = People.new
+people.name = "Aaron Eckhart"
+people.save
+
+people = People.new
+people.name = "Maggie Gyllenhaal"
+people.save
+
+
+
+
+people = People.new
+people.name = "Christopher Nolan"
+people.save
+
+CREATE TABLE movies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  year_released INTEGER,
+  rated TEXT,
+  person_id INTEGER
+);
+
+CREATE TABLE people (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+);
+
+CREATE TABLE roles (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  movie_id INTEGER,
+  person_id INTEGER,
+  character_name TEXT
+);
 
 # Prints a header for the movies output
 puts "Movies"
