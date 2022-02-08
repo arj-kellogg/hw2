@@ -1,0 +1,12 @@
+<% 
+    fillings = ["Carnitas", "Al Pastor", "Steak","Fish"]
+%>
+
+<h1> Tacos are okay </h1>
+
+<p> currently there are <%= fillings.count %> kind of tacos </p>
+
+<ul>
+    <% for filling in fillings %>
+    <li> <%= filling %>
+    <% end %>
